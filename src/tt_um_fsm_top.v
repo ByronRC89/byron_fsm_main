@@ -16,7 +16,7 @@ module tt_um_fsm_top (
     wire clk_1Hz;
     wire [7:0] d;
     // Instancia del prescaler
-    prescaler prescaler_inst (
+    prescaler_clk prescaler_inst (
         .clk_in(CLK100MHZ),
         .reset(BTNC),
         .clk_out(clk_1Hz)
