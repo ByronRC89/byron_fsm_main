@@ -1,8 +1,8 @@
 module tt_um_fsm_top (
-    input  wire CLK100MHZ,
-    input  wire BTNC,
-    input  wire [1:0] SW,
-    output [2:0] LED,
+   // input  wire CLK100MHZ,
+   // input  wire BTNC,
+   // input  wire [1:0] SW,
+   // output [2:0] LED,
     input  [7:0] ui_in,
     output [7:0] uo_out,
     output [7:0] uio_out,
