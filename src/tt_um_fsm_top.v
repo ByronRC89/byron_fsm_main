@@ -29,7 +29,7 @@ module tt_um_fsm_top (
         .Lento(ui_in[1]),
         .out_30(uo_out[0]),
         .out_50(uo_out[1]),
-        .out_100(uo_out[2]
+       .out_100(uo_out[2])
        /// .Rapido(SW[0]),
         //.Lento(SW[1]),
        // .out_30(LED[0]),
