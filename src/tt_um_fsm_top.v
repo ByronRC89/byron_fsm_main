@@ -25,11 +25,16 @@ module tt_um_fsm_top (
     arranque_rampa_parcial rampa_inst (
         .clk(clk_1Hz),
         .reset(BTNC),
-        .Rapido(SW[0]),
-        .Lento(SW[1]),
-        .out_30(LED[0]),
-        .out_50(LED[1]),
-        .out_100(LED[2])
+       .Rapido(ui_in[0]),
+        .Lento(ui_in[1]),
+        .out_30(uo_out[0]),
+        .out_50(uo_out[1]),
+        .out_100(uo_out[2]
+       /// .Rapido(SW[0]),
+        //.Lento(SW[1]),
+       // .out_30(LED[0]),
+       // .out_50(LED[1]),
+       // .out_100(LED[2])
     );
      assign uio_out = 8'b00000000; // o alguna lógica válida
     assign uio_oe = 8'b00000000;        // habilita todas las salidas
