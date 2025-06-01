@@ -12,7 +12,7 @@ module arranque_rampa_parcial (
 
     wire notEA, notES, notR, notL;
     wire and1, and2, and3, and4, and5, and6, and7;
-    wire or1, or2, or3;
+    wire or1, or2;
 
     assign notEA = ~estado_actual;
     assign notES = ~estado_siguiente;
