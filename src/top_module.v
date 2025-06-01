@@ -2,10 +2,18 @@ module top_module (
     input  wire CLK100MHZ,
     input  wire BTNC,
     input  wire [1:0] SW,
-    output [2:0] LED
+    output [2:0] LED,
+    input  [7:0] ui_in,
+    output [7:0] uo_out,
+    output [7:0] uio_out,
+    input  [7:0] uio_in,
+    output [7:0] uio_oe,
+    input clk,
+    input ena,
+    input rst_n
 );
     wire clk_1Hz;
-
+    wire [7:0] d;
     // Instancia del prescaler
     prescaler prescaler_inst (
         .clk_in(CLK100MHZ),
@@ -23,4 +31,8 @@ module top_module (
         .out_50(LED[1]),
         .out_100(LED[2])
     );
+     assign uio_out = 8'b00000000; // o alguna lógica válida
+    assign uio_oe = 8'b00000000;        // habilita todas las salidas
+    assign d = uio_in;
+    
 endmodule
