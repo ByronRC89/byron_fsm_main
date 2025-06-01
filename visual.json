@@ -1,0 +1,8 @@
+{
+  "description": "FSM con prescaler para secuencia de encendido",
+  "user_module": "tt_um_fsm_top",
+  "inputs": ["ui_in[0]", "ui_in[1]"],
+  "outputs": ["uo_out[0]", "uo_out[1]", "uo_out[2]"],
+  "bidirectional": [],
+  "clock": "clk"
+}
