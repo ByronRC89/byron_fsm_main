@@ -1,4 +1,4 @@
-module top_module (
+module tt_um_fsm_top (
     input  wire CLK100MHZ,
     input  wire BTNC,
     input  wire [1:0] SW,
