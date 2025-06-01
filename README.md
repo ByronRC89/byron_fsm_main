@@ -1,23 +1,34 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg) ![](../../workflows/test/badge.svg) ![](../../workflows/fpga/badge.svg)
 
-# Tiny Tapeout Verilog Project Template
+# FSM de Arranque con Prescaler - Proyecto Tiny Tapeout
 
-- [Read the documentation for project](docs/info.md)
+Este proyecto implementa una **Máquina de Estados Finitos (FSM)** que controla una secuencia de encendido gradual (30%, 50%, 100%) basada en señales de control de velocidad (`rapido`, `lento`). Además, se incluye un módulo `prescaler_clk` que convierte el reloj de entrada (por ejemplo, 100 MHz) a una frecuencia de 1 Hz, adecuada para la transición de estados observables.
 
-## What is Tiny Tapeout?
+## Archivos clave
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital and analog designs manufactured on a real chip.
+- `arranque_rampa_parcial.v`: Lógica secuencial de la FSM de encendido.
+- `prescaler_clk.v`: Prescaler de reloj para reducir frecuencia.
+- `top_module.v`: Integración del sistema.
+- `tt_um_byron.v`: Módulo de usuario compatible con el wrapper estándar de Tiny Tapeout.
 
-To learn more and get started, visit https://tinytapeout.com.
+## Cómo funciona
 
-## Set up your Verilog project
+- Las señales `rapido` y `lento` se ingresan por `ui_in[0]` y `ui_in[1]`.
+- La FSM genera salidas `out_30`, `out_50`, y `out_100` según la secuencia activada.
+- Las salidas se reflejan en `uo_out[0:2]` para ser observadas desde el chip.
 
-1. Add your Verilog files to the `src` folder.
-2. Edit the [info.yaml](info.yaml) and update information about your project, paying special attention to the `source_files` and `top_module` properties. If you are upgrading an existing Tiny Tapeout project, check out our [online info.yaml migration tool](https://tinytapeout.github.io/tt-yaml-upgrade-tool/).
-3. Edit [docs/info.md](docs/info.md) and add a description of your project.
-4. Adapt the testbench to your design. See [test/README.md](test/README.md) for more information.
+## Simulación y pruebas
 
-The GitHub action will automatically build the ASIC files using [OpenLane](https://www.zerotoasiccourse.com/terminology/openlane/).
+El entorno incluye archivos de prueba básicos dentro de la carpeta `test/`, listos para ser integrados con **Cocotb** y ejecutados mediante GitHub Actions.
+
+## Cómo implementar este diseño
+
+1. Coloca tus archivos Verilog dentro de `src/`.
+2. Asegúrate que el archivo `info.yaml` tenga el nombre del top module: `tt_um_byron`.
+3. Adapta `tt_um_byron.v` como wrapper para tu diseño principal (`top_module`).
+4. Ejecuta `make` dentro de `test/` para correr pruebas locales.
+5. Sube tu diseño al [portal de Tiny Tapeout](https://tinytapeout.com).
+
 
 ## Enable GitHub actions to build the results page
 
