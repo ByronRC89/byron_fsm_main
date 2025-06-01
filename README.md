@@ -36,11 +36,11 @@ El entorno incluye archivos de prueba básicos dentro de la carpeta `test/`, lis
 
 ## Resources
 
+
 - [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-- [Build your design locally](https://www.tinytapeout.com/guides/local-hardening/)
+- [Guía para pruebas locales](https://tinytapeout.com/guides/local-hardening/)
+- [Curso de diseño digital](https://tinytapeout.com/digital_design/)
+
 
 ## What next?
 
