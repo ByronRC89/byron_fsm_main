@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module prescaler (
+module prescaler_clk (
     input  wire clk_in,      // CLK100MHZ
     input  wire reset,
     output clk_out      // Salida de 1 Hz
