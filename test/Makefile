@@ -8,6 +8,9 @@ SIM = icarus
 # Generar resultados en formato JUnit XML para GitHub Actions
 EXTRA_ARGS += --junit-xml=results.xml
 
+
+include $(shell cocotb-config --makefiles)/Makefile.inc
+
 # Regla clean necesaria para evitar errores
 clean:
 	rm -rf sim_build __pycache__ results.xml
