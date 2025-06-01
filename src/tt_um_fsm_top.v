@@ -12,6 +12,7 @@ module tt_um_fsm_top (
     input ena,
     input rst_n
 );
+    wire [7:0] result;
     wire clk_1Hz;
     wire [7:0] d;
     // Instancia del prescaler
@@ -36,7 +37,8 @@ module tt_um_fsm_top (
        // .out_50(LED[1]),
        // .out_100(LED[2])
     );
-     assign uio_out = 8'b00000000; // o alguna lógica válida
+    assign uo_out = result;
+    assign uio_out = 8'b00000000; // o alguna lógica válida
     assign uio_oe = 8'b00000000;        // habilita todas las salidas
     assign d = uio_in;
     
