@@ -17,15 +17,15 @@ module tt_um_fsm_top (
     wire [7:0] d;
     // Instancia del prescaler
     prescaler_clk prescaler_inst (
-        .clk_in(CLK100MHZ),
-        .reset(BTNC),
+       .clk_in(ui_in),
+       .reset(ui_in),
         .clk_out(clk_1Hz)
     );
 
     // Instancia del módulo principal
     arranque_rampa_parcial rampa_inst (
         .clk(clk_1Hz),
-        .reset(BTNC),
+       .reset(ui_in),
        .Rapido(ui_in[0]),
         .Lento(ui_in[1]),
         .out_30(uo_out[0]),
