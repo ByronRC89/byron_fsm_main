@@ -1,21 +1,18 @@
 module arranque_rampa_parcial (
-    input  clk,
-    input  reset,
-    input  Rapido,
-    input  Lento,
+    input clk,
+    input reset,
+    input Rapido,
+    input Lento,
     output out_30,
     output out_50,
     output out_100
 );
 
-  // assign estado_actual; 
-  // assign estado_siguiente;
-    assign estado_actual = 1'b0;
-    assign estado_siguiente = 1'b1;
+    reg estado_actual, estado_siguiente;
 
-   assign wire notEA, notES, notR, notL;
-   assign wire and1, and2, and3, and4, and5, and6, and7;
-   assign wire or1, or2;
+    wire notEA, notES, notR, notL;
+    wire and1, and2, and3, and4, and5, and6, and7;
+    wire or1, or2;
 
     assign notEA = ~estado_actual;
     assign notES = ~estado_siguiente;
@@ -33,7 +30,7 @@ module arranque_rampa_parcial (
     assign or2 = ~and5 | Rapido;
 
     // Estado siguiente
-    always_ff @(posedge clk or posedge reset) begin
+    always @(posedge clk or posedge reset) begin
         if (reset)
             estado_siguiente <= 0;
         else
@@ -41,7 +38,7 @@ module arranque_rampa_parcial (
     end
 
     // Estado actual
-    always_ff @(posedge clk or posedge reset) begin
+    always @(posedge clk or posedge reset) begin
         if (reset)
             estado_actual <= 0;
         else
@@ -53,3 +50,4 @@ module arranque_rampa_parcial (
     assign out_100 = ~(notES | notEA);              // OR5
 
 endmodule
+
