@@ -1,8 +1,8 @@
 module arranque_rampa_parcial (
-    input  wire clk,
-    input  wire reset,
-    input  wire Rapido,
-    input  wire Lento,
+    input  clk,
+    input  reset,
+    input  Rapido,
+    input  Lento,
     output out_30,
     output out_50,
     output out_100
