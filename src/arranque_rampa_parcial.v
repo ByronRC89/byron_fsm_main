@@ -8,8 +8,10 @@ module arranque_rampa_parcial (
     output out_100
 );
 
-   assign estado_actual; 
-   assign estado_siguiente;
+  // assign estado_actual; 
+  // assign estado_siguiente;
+    assign estado_actual = 1'b0;
+    assign estado_siguiente = 1'b1;
 
    assign wire notEA, notES, notR, notL;
    assign wire and1, and2, and3, and4, and5, and6, and7;
