@@ -14,10 +14,10 @@ module arranque_rampa_parcial (
     wire and1, and2, and3, and4, and5, and6, and7;
     wire or1, or2;
 
-    assign wire notEA = ~estado_actual;
-    assign wire notES = ~estado_siguiente;
-    assign wire notR  = ~Rapido;
-    assign wire notL  = ~Lento;
+    assign notEA = ~estado_actual;
+    assign notES = ~estado_siguiente;
+    assign notR  = ~Rapido;
+    assign notL  = ~Lento;
 
     assign wire and1 = notEA & Rapido;
     assign wire and2 = notR & notL;
