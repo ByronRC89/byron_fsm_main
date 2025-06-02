@@ -19,7 +19,7 @@ module arranque_rampa_parcial (
     assign notR  = ~Rapido;
     assign notL  = ~Lento;
 
-    assign wire and1 = notEA & Rapido;
+    assign and1 = notEA & Rapido;
     assign wire and2 = notR & notL;
     assign wire and3 = estado_siguiente & ~and2;
     assign wire and6 = notEA & Lento;
