@@ -8,7 +8,8 @@ module arranque_rampa_parcial (
     output out_100
 );
 
-    reg estado_actual, estado_siguiente;
+    reg estado_actual;
+    reg estado_siguiente;
 
     wire notEA, notES, notR, notL;
     wire and1, and2, and3, and4, and5, and6, and7;
