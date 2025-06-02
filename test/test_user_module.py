@@ -1,10 +1,24 @@
 import cocotb
-from cocotb.triggers import Timer
-
+from cocotb.triggers import RisingEdge
 
 @cocotb.test()
-async def test_basic_addition(dut):
-    # Test básico: A = 1, B = 2, sel = 000 (suma)
-    dut.io_in.value = 0b00010010  # A=1 (bits 7:4), B=2 (bits 3:0), sel=000 (bits 2:0)
-    await Timer(10, units='ns')
-    assert dut.io_out.value == 3, f"Suma fallida: se obtuvo {dut.io_out.value}"
+async def test_fsm_behavior(dut):
+    dut._log.info("Iniciando prueba de FSM con prescaler")
+
+    # Reset
+    dut.rst_n.value = 0
+    for _ in range(2):
+        await RisingEdge(dut.clk)
+    dut.rst_n.value = 1
+
+    # Aplicar entrada lenta
+    dut.ui_in.value = 0b00000010  # lento
+    for _ in range(5):
+        await RisingEdge(dut.clk)
+
+    # Aplicar entrada rápida
+    dut.ui_in.value = 0b00000001  # rapido
+    for _ in range(5):
+        await RisingEdge(dut.clk)
+
+    dut._log.info("Finalizó la prueba")
