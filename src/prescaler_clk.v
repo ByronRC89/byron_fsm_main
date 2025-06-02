@@ -20,8 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module prescaler_clk (
-    input  wire clk_in,      // CLK100MHZ
-    input  wire reset,
+    input  clk_in,      // CLK100MHZ
+    input  reset,
     output clk_out      // Salida de 1 Hz
 );
     parameter integer MAX_COUNT = 50_000_000 - 1;
