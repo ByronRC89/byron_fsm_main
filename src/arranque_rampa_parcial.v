@@ -14,20 +14,20 @@ module arranque_rampa_parcial (
     wire and1, and2, and3, and4, and5, and6, and7;
     wire or1, or2;
 
-    assign notEA = ~estado_actual;
-    assign notES = ~estado_siguiente;
-    assign notR  = ~Rapido;
-    assign notL  = ~Lento;
+    assign wire notEA = ~estado_actual;
+    assign wire notES = ~estado_siguiente;
+    assign wire notR  = ~Rapido;
+    assign wire notL  = ~Lento;
 
-    assign and1 = notEA & Rapido;
-    assign and2 = notR & notL;
-    assign and3 = estado_siguiente & ~and2;
-    assign and6 = notEA & Lento;
-    assign and7 = notES & estado_actual;
-    assign and4 = ~and3 & estado_siguiente;
-    assign and5 = ~and4 & ~and7;
-    assign or1 = Rapido | notEA;
-    assign or2 = ~and5 | Rapido;
+    assign wire and1 = notEA & Rapido;
+    assign wire and2 = notR & notL;
+    assign wire and3 = estado_siguiente & ~and2;
+    assign wire and6 = notEA & Lento;
+    assign wire and7 = notES & estado_actual;
+    assign wire and4 = ~and3 & estado_siguiente;
+    assign wire and5 = ~and4 & ~and7;
+    assign wire or1 = Rapido | notEA;
+    assign wire or2 = ~and5 | Rapido;
 
     // Estado siguiente
     always_ff @(posedge clk or posedge reset) begin
