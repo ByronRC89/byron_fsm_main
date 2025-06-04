@@ -13,8 +13,8 @@ module tt_um_fsm_top (
     input rst_n
 );
     //wire [7:0] result;
-    wire clk_1Hz;
-    wire [7:0] d;
+   // wire clk_1Hz;
+    //wire [7:0] d;
     // Instancia del prescaler
     prescaler_clk prescaler_inst (
        .clk_in(ui_in),
