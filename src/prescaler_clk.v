@@ -18,25 +18,25 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
+//**
+//module prescaler_clk (
+//    input  clk_in,      // CLK100MHZ
+//    input  reset,
+//    output clk_out      // Salida de 1 Hz
+//);
+//    parameter integer MAX_COUNT = 50_000_000 - 1;
 
-module prescaler_clk (
-    input  clk_in,      // CLK100MHZ
-    input  reset,
-    output clk_out      // Salida de 1 Hz
-);
-    parameter integer MAX_COUNT = 50_000_000 - 1;
+//    wire [25:0] counter = 0;
 
-    wire [25:0] counter = 0;
-
-    always_ff @(posedge clk_in or posedge reset) begin
-        if (reset) begin
-            counter <= 0;
-            clk_out <= 0;
-        end else if (counter == MAX_COUNT) begin
-            counter <= 0;
-            clk_out <= ~clk_out;
-        end else begin
-            counter <= counter + 1;
-        end
-    end
-endmodule
+//    always_ff @(posedge clk_in or posedge reset) begin
+//        if (reset) begin
+//            counter <= 0;
+//            clk_out <= 0;
+//        end else if (counter == MAX_COUNT) begin
+//          counter <= 0;
+//            clk_out <= ~clk_out;
+//       end else begin
+//           counter <= counter + 1;
+//        end
+//  end
+//endmodule  
