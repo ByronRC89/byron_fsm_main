@@ -16,10 +16,10 @@ module tt_um_fsm_top (
    // wire clk_1Hz;
     //wire [7:0] d;
     // Instancia del prescaler
-    prescaler_clk prescaler_inst (
-       .clk_in(ui_in),
-       .reset(ui_in),
-        .clk_out(clk_1Hz)
+  //  prescaler_clk prescaler_inst (
+  //     .clk_in(ui_in),
+  //     .reset(ui_in),
+  //      .clk_out(clk_1Hz)
     );
 
     // Instancia del módulo principal
