@@ -40,6 +40,6 @@ module tt_um_fsm_top (
    // assign uo_out = result;
     assign uio_out = 8'b00000000; // o alguna lógica válida
     assign uio_oe = 8'b00000000;        // habilita todas las salidas
-    assign d = uio_in;
+   // assign d = uio_in;
     
 endmodule
