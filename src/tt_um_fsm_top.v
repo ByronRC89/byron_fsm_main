@@ -20,7 +20,7 @@ module tt_um_fsm_top (
   //     .clk_in(ui_in),
   //     .reset(ui_in),
   //      .clk_out(clk_1Hz)
-    );
+   // );
 
     // Instancia del módulo principal
     arranque_rampa_parcial rampa_inst (
